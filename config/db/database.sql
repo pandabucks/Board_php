@@ -7,19 +7,16 @@ use bbs_board;
 drop table if exists users;
 create table users(
   id int unsigned auto_increment primary key,
-  name varchar(255) not null,
+  name varchar(255),
   password varchar(255) not null,
   email varchar(300) not null unique
 );
-insert into users (name, password, email) values
-  ('Sato','pass0000','satosato@gmail.com'),('Yoko','pass0000','yoko@yahoo.co.jp'),('hoge','pass0000','hogehoge@hogehoge.hoge'),
-  ('fuga','pass0000','fugafuga@fuga.jp'),('kenji','pass0000','kenji@example.jp');
 
 drop table if exists posts;
 create table posts(
   id int unsigned primary key auto_increment,
   title varchar(255) not null,
-  content varchar(5000) not null,
+  content varchar(255) not null,
   user_id int unsigned,
   constraint fk_post_users_id foreign key (user_id) references users (id),
   created_at datetime not null default current_timestamp,
@@ -38,10 +35,11 @@ insert into posts (title, content, user_id) values
 drop table if exists comments;
 create table comments(
   id int unsigned primary key auto_increment,
-  content varchar(500) not null,
+  content varchar(255) not null,
   user_id int unsigned not null,
   post_id int unsigned not null,
-  created_at timestamp,
+  created_at datetime,
+  updated_at datetime,
   constraint fk_post_comments_id foreign key (post_id) references posts (id),
   constraint fk_user_comments_id foreign key (user_id) references users (id)
 );

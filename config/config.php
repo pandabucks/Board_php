@@ -4,6 +4,8 @@
   define('DB_PASSWORD', 'hogehoge');
   define('PDO_DSN', 'mysql:host=127.0.0.1;dbname=' . DB_NAME);
 
+  define('SITE_URL', 'http://'.$_SERVER['HTTP_HOST']);
+
   require_once(__DIR__.'/../utils/functions.php');
   require_once(__DIR__.'/autoload.php');
   session_start();

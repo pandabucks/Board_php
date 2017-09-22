@@ -1,3 +1,11 @@
+<?php
+  require_once (__DIR__.'/../config/config.php');
+
+  // 新規登録画面の処理
+  $app = new PhpBbs\Controller\Signup();
+  $app->run();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,9 +34,16 @@
     <form action="" method="POST">
       <div ng-class="signinup_form_item">
         <label for="email"></label>
-        <input type="email" name="email" placeholder="email" class="signinup_input_email"></input>
+        <input type="text" name="email" placeholder="email" class="signinup_input_email"></input>
+        <p class="signinup-form-erros">
+          <?= h($app->getErrors('email'));?>
+        </p>
         <label for="password"></label>
         <input type="password" name="password" placeholder="password" class="signinup_input_password">
+        <p class="signinup-form-erros">
+          <?= h($app->getErrors('password'));?>
+        </p>
+        <input type="hidden" name="token" value="<?= h($_SESSION['token']);?>">
         <div class="signinup_button-panel">
           <input type="submit" class="button" value="Sign Up">
         </div>

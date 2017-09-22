@@ -1,3 +1,10 @@
+<?php
+  require_once (__DIR__.'/../config/config.php');
+  $app = new PhpBbs\Controller\Signin();
+  $app->run();
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,19 +23,21 @@
       <h1 class="headler-main-title">
         ログインページ
       </h1>
-      <p><a href="#">file:///Library/WebServer/Documents/php-bbs/views/show.html</a></p>
+      <p><a href="./index.php">トップページに戻る</a></p>
     </div>
   </div>
 </header>
 <div class="main-wrapper">
   <div class="signinup_form_area">
     <h2>ログイン</h2>
+    <!-- このファイルに飛ばすのでactionはからでおk -->
     <form action="" method="POST">
       <div ng-class="signinup_form_item">
         <label for="email"></label>
         <input type="email" name="email" placeholder="email" class="signinup_input_email"></input>
         <label for="password"></label>
         <input type="password" name="password" placeholder="password" class="signinup_input_password">
+        <input type="hidden" name="token" value="<?= h($_SESSION['token']);?>">
         <div class="signinup_button-panel">
           <input type="submit" class="button" value="Sign In">
         </div>

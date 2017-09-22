@@ -144,11 +144,49 @@ h1.headler-main-title {
 
 /* 以下記事記事詳細ページ用のレイアウト */
 
+
 .main-show-page-wrapper {
   padding: 20px;
   padding-top:0px;
   width: 100%;
   box-sizing: border-box;
+}
+
+.show-topic-area { 
+}
+
+.show-post-edit-area {
+  width: 100%;
+}
+
+.show-post-edit-area h5 {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #48526A;
+  margin-bottom: 20px;
+}
+
+.show-edit-delete-button-area {
+  padding: 10px;
+}
+
+.show-edit-topic-textarea {
+  width: 90%;
+  border: #dcdcdc 1px solid;
+  line-height: 1.4rem;
+  font-size: 1.2rem;
+}
+
+
+.show-edit-delete-button-area button{
+  background-color: #3498db;
+  border: none;
+  line-height: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .show-top-comment-num {
@@ -241,7 +279,12 @@ div.show-comement-data {
 /*ページ下部コメントページ*/
 
 .show-page-comment-area{
-  text-align: center;
+  padding: 1em 1em;
+  color: #5d627b;
+  background: white;
+  border-top: solid 5px #3498db;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  margin-bottom: 20px;
 }
 
 .show-page-comment-area h4{
@@ -249,17 +292,23 @@ div.show-comement-data {
   font-size: 1.4rem;
   font-weight: 700;
   color: #48526A;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.show-page-comment-textarea {
+  width: 100%;
+  border: #dcdcdc 1px solid;
+  line-height: 1.4rem;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
 }
 
 .page-comment-area {
   text-align: center;
-  margin-bottom: 200px;
+  margin-bottom: 30px;
 }
 
-textarea.page_comment_textarea {
-  border-top: #3498db;
-}
+
 
 .page_comment_submit {
   padding: 10px 30px;
@@ -301,6 +350,12 @@ textarea.page_comment_textarea {
   text-align: center;
 }
 
+.signinup-form-erros {
+  color: red;
+  font-weight: bold;
+}
+
+
 input.signinup_input_email, input.signinup_input_password {
   background: #fafafa;
   border: none;
@@ -341,7 +396,7 @@ input.signinup_input_email, input.signinup_input_password {
 /*　トップページ用スタイル */
 
 .top-main-area-box {
-  padding: 0.5em 1em;
+  padding: 1em 1em;
   color: #5d627b;
   background: white;
   border-top: solid 5px #3498db;
@@ -373,4 +428,64 @@ input.signinup_input_email, input.signinup_input_password {
   margin: 1em 0;
   padding-left: 40px;
 }
+
+
+/*トップページ用のフォーム*/
+
+.top-main-thread-build-area {
+  padding: 10px;
+}
+
+.top-main-thread-build-area label {
+  font-size: 1.1rem;
+}
+
+.top-main-thread-build-content {
+  margin-bottom: 10px;
+}
+
+.top-main-thread-inputarea {
+  margin-top: 10px;
+  width: 100%;
+  line-height: 1.4rem;
+  font-size: 1.2rem;
+  border: #dcdcdc 1px solid;
+}
+
+.top-main-thread-textarea {
+  width: 100%;
+  border: #dcdcdc 1px solid;
+  line-height: 1.4rem;
+  font-size: 1.2rem;
+}
+
+.top-main-thread-build-button-area {
+  text-align: right;
+}
+
+.top-main-thread-build-button-area button {
+  background-color: #3498db;
+  border: none;
+  line-height: 1.3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+.top-logout-area { 
+}
+
+
+
+
+
+/*JSによる動的フォーム周りの実装*/
+.hidden-form {
+  display: none;
+}
+
+
+
+
 
